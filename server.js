@@ -2,7 +2,7 @@
  * @Author: loewe0202
  * @Date: 2020-05-16 14:35:24
  * @Last Modified by: loewe0202
- * @Last Modified time: 2020-05-16 23:05:12
+ * @Last Modified time: 2020-05-16 23:15:10
  */
 
 const http = require('http')
@@ -64,11 +64,14 @@ app.use(cors())
 
 app.use(router.routes()).use(router.allowedMethods())
 
-http.createServer(app.callback()).listen(3000) // http 服务
+http.createServer(app.callback()).listen(3000, () => {
+  console.info('http 服务运行在：http://localhost:3000')
+}) // http 服务
 
 const options = {
   key: fs.readFileSync('./server.key', 'utf8'),
   cert: fs.readFileSync('./server.cert', 'utf8')
 }
-https.createServer(options, app.callback()).listen(443) // https 服务
-console.log('服务启动...')
+https.createServer(options, app.callback()).listen(443, () => {
+  console.info('https 服务运行在：https://localhost:443')
+}) // https 服务

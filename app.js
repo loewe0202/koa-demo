@@ -2,9 +2,10 @@
  * @Author: loewe0202
  * @Date: 2020-05-16 14:35:24
  * @Last Modified by: loewe0202
- * @Last Modified time: 2020-05-16 22:58:56
+ * @Last Modified time: 2020-05-16 23:20:20
  */
 
+const open = require('open')
 const Koa = require('koa')
 const Router = require('koa-router')
 const cors = require('@koa/cors')
@@ -61,5 +62,7 @@ app.use(cors())
 
 app.use(router.routes()).use(router.allowedMethods())
 
-app.listen(3000)
-console.log('服务已运行：localhost:3000')
+app.listen(3000, () => {
+  open('http://localhost:3000/api/list')
+  console.info('服务运行在：http://localhost:3000/')
+})
