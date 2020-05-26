@@ -1,4 +1,4 @@
-module.exports = async function (ctx) {
+const asyncFn = async ctx => {
   let result = await new Promise(resolve => {
     setTimeout(() => {
       resolve('2s later!')
@@ -12,3 +12,5 @@ module.exports = async function (ctx) {
     }
   }
 }
+
+export default asyncFn

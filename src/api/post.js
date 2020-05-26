@@ -1,4 +1,4 @@
-module.exports = function (ctx) {
+const post = ctx => {
   let { body } = ctx.request
   ctx.body = {
     code: 200,
@@ -7,3 +7,5 @@ module.exports = function (ctx) {
     }
   }
 }
+
+export default post

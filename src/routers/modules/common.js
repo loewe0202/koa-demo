@@ -1,14 +1,14 @@
-const Router = require('koa-router')
+import Router from 'koa-router'
+import list from '../../api/list'
+import asyncFn from '../../api/asyncFn'
+import post from '../../api/post'
+
 const commonRouter = new Router({
   prefix: '/api/common'
 })
-
-const list = require('../../api/list')
-const asyncFn = require('../../api/asyncFn')
-const post = require('../../api/post')
 
 commonRouter.get('/list', list)
 commonRouter.get('/async', asyncFn)
 commonRouter.get('/post', post)
 
-module.exports = commonRouter
+export default commonRouter

@@ -1,4 +1,5 @@
-const Router = require('koa-router')
+import Router from 'koa-router'
+
 const userRouter = new Router({
   prefix: '/api/user'
 })
@@ -14,4 +15,4 @@ userRouter.get('/', async ctx => {
   }
 })
 
-module.exports = userRouter
+export default userRouter
