@@ -4,7 +4,8 @@
   "description": "koa 学习",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/app.js"
+    "start": "nodemon --exec babel-node src/app.js",
+    "webpack:debug": "npx node --inspect-brk ./node_modules/.bin/webpack --inline --progress"
   },
   "keywords": [],
   "author": "loewe0202",
