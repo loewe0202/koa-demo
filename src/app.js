@@ -13,7 +13,7 @@ const middleware = compose([
   koaHelmet(),
   koaBody(),
   koaCors(),
-  koaStatic(resolve('static')),
+  koaStatic(resolve('../static')),
   koaJson({ pretty: false, param: 'pretty' })
 ])
 
