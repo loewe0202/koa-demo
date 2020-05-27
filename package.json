@@ -6,7 +6,9 @@
   "scripts": {
     "start": "nodemon --exec babel-node src/app.js",
     "webpack:debug": "npx node --inspect-brk ./node_modules/.bin/webpack --inline --progress",
-    "build": "cross-env NODE_ENV=prod webpack --config config/webpack.config.prod.js"
+    "build": "cross-env NODE_ENV=prod webpack --config config/webpack.config.prod.js",
+    "dev": "cross-env NODE_ENV=dev nodemon --exec babel-node --inspect src/app.js",
+    "clean": "rimraf dist"
   },
   "keywords": [],
   "author": "loewe0202",
@@ -43,6 +45,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.6",
     "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
     "terser-webpack-plugin": "^3.0.1"
   },
   "lint-staged": {
