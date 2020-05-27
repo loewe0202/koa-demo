@@ -1,6 +1,6 @@
 import combineRouters from 'koa-combine-routers'
-import commonRouter from './modules/common'
-import userRouter from './modules/user'
+import commonRouter from './modules/demoRouter'
+import userRouter from './modules/userRouter'
 
 const router = combineRouters(commonRouter, userRouter)
 
